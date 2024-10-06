@@ -1,0 +1,6 @@
+.DS_Store
+Pipfile.lock
+review.md
+tempCodeRunner.py
+.vscode
+.venv

@@ -1,0 +1,8 @@
+a, b, c = map(str, input().split())
+ans1 = int(a + b) + int(c)
+ans2 = int(b + a) + int(c)
+ans3 = int(a) + int(b + c)
+ans4 = int(a) + int(c + b)
+ans5 = int(a + c) + int(b)
+ans6 = int(c + a) + int(b)
+print(max(ans1, ans2, ans3, ans4, ans5, ans6))

@@ -1,6 +1,3 @@
-from sys import orig_argv
-
-
 n = int(input())
 h = list(map(int, input().split()))
 

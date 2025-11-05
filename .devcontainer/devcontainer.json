@@ -1,0 +1,62 @@
+{
+  "name": "atcoder",
+  "dockerFile": "./Dockerfile",
+  "workspaceFolder": "/workspace",
+  "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached",
+  "runArgs": [
+        "--env-file",
+        ".devcontainer/.env"
+  ],
+  "containerEnv": {
+    "WORKSPACE_FOLDER": "${containerWorkspaceFolder}"
+  },
+  "postCreateCommand": "login.sh",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.shell.linux": "zsh",
+        "terminal.integrated.defaultProfile.linux": "zsh",
+        "terminal.integrated.profiles.linux": {
+          "bash": {
+            "path": "/usr/bin/zsh",
+              "args": [
+                "-l"
+              ]
+          }
+        },
+        "python.pythonPath": "/usr/local/bin/python",
+        "python.linting.enabled": true,
+        "python.linting.pylintEnabled": true,
+        "python.linting.flake8Enabled": true,
+        "python.linting.flake8Args": [
+            "--ignore=E402,E501"
+        ],
+        "python.formatting.provider": "autopep8",
+        "python.formatting.autopep8Args": [
+            "--ignore",
+            "E402,E501",
+            "--max-line-length",
+            "150"
+        ],
+        "[python]": {
+            "editor.formatOnSave": true,
+            "editor.formatOnType": true,
+            "editor.defaultFormatter": "charliermarsh.ruff"
+        },
+        "terminal.integrated.fontSize": 17,
+        "editor.fontSize": 17
+      },
+      "extensions": [
+        "oderwat.indent-rainbow",
+        "streetsidesoftware.code-spell-checker",
+        "ms-python.python",
+        "charliermarsh.ruff",
+        "christian-kohler.path-intellisense",
+        "ms-toolsai.jupyter",
+        "vadimcn.vscode-lldb",
+        "eamodio.gitlens",
+        "mhutchie.git-graph"
+      ]
+    }
+  }
+}
